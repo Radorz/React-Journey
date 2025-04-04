@@ -1,0 +1,11 @@
+import React from 'react'
+
+const GifExpertApp = () => {
+  return (
+    <div>
+      <h1>Gif App</h1>
+    </div>
+  )
+}
+
+export default GifExpertApp
