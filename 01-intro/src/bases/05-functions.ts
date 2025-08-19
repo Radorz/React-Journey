@@ -13,7 +13,14 @@ const message = greet('Hola');
 const message2 = greet('Hola');
 console.log(message, message2);
 
-function getUser() {
+
+interface User {
+    uid:string;
+    username: string;
+}
+
+
+function getUser() : User {
     return{
         uid: 'ABC-123',
         username: 'Pajita tox'
