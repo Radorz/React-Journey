@@ -26,3 +26,11 @@ return {
     rank
 }
 };
+
+const context = useContext(person);
+
+const {rank, keyName} = useContext(person);
+
+console.log(context); 
+
+console.log({rank, keyName});
