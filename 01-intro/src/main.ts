@@ -6,6 +6,9 @@ import './style.css'
 // import './bases/05-functions'
 import './bases/06-obj-destructuring'
 import './bases/07-array-destructuring'
+import  './bases/10-fetch-api'
+import  './bases/11-async-await'
+
 // import { Owner } from './bases/data/heroes.data'
 // import { getHeroeByOwner } from './bases/08-imp-exp'
 
