@@ -14,7 +14,7 @@ const ItemCounter = ({name, quantity = 1} : Props) => {
     }
 
     const handleSubs = () => {
-        if(count===1)
+      if(count===1)
             return
 
         setCount(count - 1)
