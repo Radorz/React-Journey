@@ -1,8 +1,14 @@
-const CustomHeader = () => {
+
+interface Props {
+  title : string;
+  description?: string;
+}
+
+const CustomHeader = ({title, description}: Props) => {
   return (
     <div className="content-center">
-      <h1>Buscador de Gifs</h1>
-      <p>Descrubre y comparte el gif perfecto</p>
+      <h1>{title}</h1>
+      {description && <p>{description}</p>}
     </div>
   );
 };

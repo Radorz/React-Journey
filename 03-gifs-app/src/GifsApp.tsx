@@ -1,37 +1,33 @@
 import { mockGifs } from "./mock-data/gifs.mock";
 import CustomHeader from "./shared/components/CustomHeader";
+import { SearchBar } from "./shared/components/SearchBar";
+import { GifList } from "./gifs/components/GifList";
+import { PreviousSearches } from "./gifs/components/PreviousSearches";
+import { useState } from "react";
 
 export const GifsApp = () => {
+  const [previousTerms, setPreviousTerms] = useState(["sex"]);
+
+  const handleTermClicked = (term: string) => {
+    console.log(term);
+  };
+
+  const handleSearch = (query: string) => {
+    console.log(query);
+  };
+
   return (
     <>
-    
-      <CustomHeader></CustomHeader>
-
-      <div className="search-container">
-        <input type="text" placeholder="Buscar Gifs" />
-        <button>Buscar</button>
-      </div>
-
-      <div className="previous-searches">
-        <h2>Busquedas Previas</h2>
-        <ul className="previous-searches-list">
-          <li>Goku</li>
-          <li>Elden Ring</li>
-          <li>Saitama</li>
-        </ul>
-      </div>
-
-      <div className="gifs-container">
-        {mockGifs.map((gif) => (
-          <div key={gif.id} className="gif-card">
-            <img src={gif.url} alt={gif.title} />
-            <h3>{gif.title}</h3>
-            <p>
-              {gif.width}x{gif.height} (1.5mb)
-            </p>
-          </div>
-        ))}
-      </div>
+      <CustomHeader
+        title="Buscador de Gifs"
+        description=" Descubre y comparte el Gif perfecto"
+      />
+      <SearchBar placeHolder="Busca lo que quieras" onQuery={handleSearch} />
+      <PreviousSearches
+        searches={previousTerms}
+        onLabelClicked={handleTermClicked}
+      />
+      <GifList gifs={mockGifs} />
     </>
   );
 };
