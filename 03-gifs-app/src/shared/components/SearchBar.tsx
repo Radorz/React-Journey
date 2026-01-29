@@ -20,7 +20,7 @@ export const SearchBar = ({ placeHolder = "Buscar", onQuery }: Props) => {
   })
 
   const handleSearch = () => {
-    onQuery(query);
+     onQuery(query);
   };
 
   const handleKeyDown = (event : React.KeyboardEvent<HTMLInputElement>) => {
@@ -35,7 +35,7 @@ export const SearchBar = ({ placeHolder = "Buscar", onQuery }: Props) => {
         type="text"
         placeholder={placeHolder}
         value={query}
-        onChange={(event) => console.log(event.target.value)}
+        onChange={(event) => setQuery(event.target.value)}
         onKeyDown={(event) =>{
           if(event.key ==='Enter')
             handleSearch();
